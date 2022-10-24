@@ -23,7 +23,7 @@ function App() {
             <Form />
             </Row>
             <p>Display GET request 1st Doctor</p>
-            <DoctorDetails/>
+            <DoctorDetails run={1}/>
             </Col>
           </Container>
         </Router>
