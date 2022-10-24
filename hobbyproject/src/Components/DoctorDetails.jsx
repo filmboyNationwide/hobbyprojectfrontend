@@ -20,7 +20,7 @@ function DoctorDetails() {
       }
     };
     getDoctor();
-  }, [params.number]);
+  }, []);
 
   return doctor && <DoctorDisplay number={doctor.number} name={doctor.name} startYear={doctor.startYear}/>;
 }

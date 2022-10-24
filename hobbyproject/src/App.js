@@ -8,6 +8,7 @@ import {
 import './App.css';
 import Form from './Components/Form'
 import DoctorDisplay from './Components/DoctorDisplay'
+import DoctorDetails from './Components/DoctorDetails'
 
 function App() {
   return (
@@ -16,11 +17,13 @@ function App() {
         <Router>
           <Container>
             <Col>
+            <p>Display hard coded doctor</p>
             <DoctorDisplay number="1st" companions={["Ian ","Barbara ","Susan "]}name="William Hartnell" startYear={1963} endYear={1966}/>
             <Row>
             <Form />
             </Row>
-            <DoctorDisplay/>
+            <p>Display GET request 1st Doctor</p>
+            <DoctorDetails/>
             </Col>
           </Container>
         </Router>
