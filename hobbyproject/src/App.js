@@ -6,6 +6,8 @@ import {
   BrowserRouter as Router, Link, Routes, Route,
 } from 'react-router-dom';
 import './App.css';
+import Form from './Components/Form'
+import DoctorDisplay from './Components/DoctorDisplay'
 
 function App() {
   return (
@@ -14,8 +16,11 @@ function App() {
         <Router>
           <Container>
             <Col>
-            <p>First text</p>
-            <p>Second Text</p>
+            <DoctorDisplay number="1st" companions={["Ian ","Barbara ","Susan "]}name="William Hartnell" startYear={1963} endYear={1966}/>
+            <Row>
+            <Form />
+            </Row>
+            <DoctorDisplay/>
             </Col>
           </Container>
         </Router>
