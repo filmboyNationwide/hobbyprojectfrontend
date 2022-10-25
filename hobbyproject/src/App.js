@@ -17,13 +17,11 @@ function App() {
         <Router>
           <Container>
             <Col>
-            <p>Display hard coded doctor</p>
-            <DoctorDisplay number="1st" companions={["Ian ","Barbara ","Susan "]}name="William Hartnell" startYear={1963} endYear={1966}/>
             <Row>
             <Form />
             </Row>
             <p>Display GET request 1st Doctor</p>
-            <DoctorDetails run={1}/>
+            <DoctorDetails name="William Hartnell" number="" />
             </Col>
           </Container>
         </Router>

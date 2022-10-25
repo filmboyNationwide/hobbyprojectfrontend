@@ -6,23 +6,25 @@ import DoctorDisplay from './DoctorDisplay';
 
 function DoctorDetails() {
   const params = useParams();
-  console.log(params.run);
+  console.log(params.name);
   const [doctor, setDoctor] = useState([]);
   
+  useEffect(()=>{
     const getDoctor = async () => {
       try {
-        const grab = await axios.get("localhost:1688/doctors/getDoctorByName/William Hartnell");
-        console.log('RESPONSE: ', grab);
-        setDoctor(grab);
-        console.log(grab);
+        const grab = await axios.get(`http://localhost:1688/doctors/getDoctorByName/William%20Hartnell`);
+        console.log('RESPONSE: ', grab.data[0]);
+        setDoctor(grab.data[0]);
       } catch (err) {
-        // err handling
+        console.log(err)
       }
     };
     getDoctor();
+  }, [])
   
+  console.log(doctor)
 
-  return console.log(doctor) && <DoctorDisplay number={doctor.number} name={doctor.name} startYear={doctor.startYear}/>;
+  return <DoctorDisplay number={doctor.number} name={doctor.name} startYear={doctor.startYear} endYear={doctor.endYear} companions={doctor.companions}/>;
 }
 
 export default DoctorDetails;
