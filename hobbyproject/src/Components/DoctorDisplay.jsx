@@ -26,9 +26,9 @@ function Doctor({
 export default Doctor;
 
 Doctor.propTypes = {
-  number: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  companions: PropTypes.array.isRequired,
-  startYear: PropTypes.number.isRequired,
+  number: PropTypes.string,
+  name: PropTypes.string,
+  companions: PropTypes.array,
+  startYear: PropTypes.number,
   endYear: PropTypes.number,
 };

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import DoctorDisplay from './DoctorDisplay';
 
-function DoctorDetails() {
+function DoctorGet() {
   const params = useParams();
   console.log(params.name);
   const [doctor, setDoctor] = useState([]);
@@ -27,4 +27,4 @@ function DoctorDetails() {
   return <DoctorDisplay number={doctor.number} name={doctor.name} startYear={doctor.startYear} endYear={doctor.endYear} companions={doctor.companions}/>;
 }
 
-export default DoctorDetails;
+export default DoctorGet;

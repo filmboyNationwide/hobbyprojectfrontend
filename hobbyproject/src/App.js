@@ -7,7 +7,9 @@ import {
 } from 'react-router-dom';
 import './App.css';
 import Form from './Components/Form'
-import DoctorDetails from './Components/DoctorDetails'
+import DoctorGet from './Components/DoctorGet'
+import DoctorCreate from './Components/DoctorCreate'
+import DoctorUpdate from './Components/DoctorUpdate'
 
 function App() {
   return (
@@ -19,7 +21,12 @@ function App() {
             <Row>
             <Form />
             </Row>
-            <DoctorDetails name="William Hartnell" number="" />
+            <p>Get Request</p>
+            <DoctorGet name="William Hartnell" number="" />
+            <p>Create Request</p>
+            <DoctorCreate/>
+            <p>Update Request</p>
+            <DoctorUpdate/>
             </Col>
           </Container>
         </Router>
