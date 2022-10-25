@@ -1,31 +1,49 @@
 import { useState } from 'react';
+import {
+    Button, Row, Col, Container,
+  } from 'react-bootstrap';
 
 const Form = () => {
-    const [username, setUsername] = useState("defaultU");
-    const [password, setPassword] = useState("defaultP");
+    const [number, setNumber] = useState("1st");
+    const [name, setName] = useState("William Hartnell");
+    const [startYear, setstartYear] = useState(1963);
+    const [endYear, setEndYear] = useState(1966);
+    const [companions, setCompanions] = useState(["Susan","Ian","Barbara"]);
+    
 
     const handleChangeU = (event) => {
-        setUsername(event.target.value);
+        setNumber(event.target.value);
         console.log(event);
     }
 
     const handleChangeP = (event) => {
-        setPassword(event.target.value);
+        setName(event.target.value);
         console.log(event);
     }
 
     return (
         <>
             <form>
-                <label htmlFor="username">Username Choice:</label>
-                <input type="text" id="username" onChange={handleChangeU} ></input>
-                <button onClick={setUsername}>Create User</button>
+                <label htmlFor="number">Doctor Number:</label>
+                <input type="text" id="number" onChange={handleChangeU} ></input>
+                <Button onClick={setNumber}>Search</Button>
                 <br></br>
-                <label htmlFor="password">Password Choice:</label>
-                <input type="text" id="password" onChange={handleChangeP}></input>
-                <button onClick={setPassword}>Create User</button>
+                <label htmlFor="name">Actor:</label>
+                <input type="text" id="name" onChange={handleChangeP}></input>
+                <Button onClick={setName}>Search</Button>
+                <br></br>
+                <label htmlFor="startYear">Start Year:</label>
+                <input type="text" id="startYear" onChange={handleChangeP}></input>
+                <Button onClick={setName}>Search</Button>
+                <br></br>
+                <label htmlFor="endYear">End Year:</label>
+                <input type="text" id="endYear" onChange={handleChangeP}></input>
+                <Button onClick={setName}>Search</Button>
+                <br></br>
+                <label htmlFor="companions">Companions:</label>
+                <input type="text" id="companions" onChange={handleChangeP}></input>
+                <Button onClick={setName}>Search</Button>
             </form>
-            <p> Username is now {username} and password is now {password}</p>
         </>
     )
 }

@@ -7,7 +7,6 @@ import {
 } from 'react-router-dom';
 import './App.css';
 import Form from './Components/Form'
-import DoctorDisplay from './Components/DoctorDisplay'
 import DoctorDetails from './Components/DoctorDetails'
 
 function App() {
@@ -20,7 +19,6 @@ function App() {
             <Row>
             <Form />
             </Row>
-            <p>Display GET request 1st Doctor</p>
             <DoctorDetails name="William Hartnell" number="" />
             </Col>
           </Container>
