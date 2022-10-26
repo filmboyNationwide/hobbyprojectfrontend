@@ -7,7 +7,10 @@ import {
 } from 'react-router-dom';
 import './App.css';
 import Form from './Components/Form'
+import EditForm from './Components/EditForm'
+
 import DoctorGet from './Components/DoctorGet'
+import TryAgain from './Components/TryAgain'
 import DoctorCreate from './Components/DoctorCreate'
 import DoctorUpdate from './Components/DoctorUpdate'
 import DoctorDisplay from './Components/DoctorDisplay'
@@ -36,7 +39,9 @@ function App() {
           <br/>
           <Routes>
             <Route path="/search" element={<Form/>}/>
-              <Route path="/details/:number" element={<DoctorGet />} />
+              <Route path="/details/:name" element={<DoctorGet name="name"/>} />
+              <Route path="/details/none" element={<TryAgain/>}/>
+              <Route path="/edit" element={<EditForm/>}/>
           </Routes>
         </Router>
       </header>

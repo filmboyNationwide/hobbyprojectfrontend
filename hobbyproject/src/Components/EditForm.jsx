@@ -4,7 +4,7 @@ import {
 } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
-const DoctorForm = () => {
+const EditForm = () => {
     const [number, setNumber] = useState("1st");
     const [name, setName] = useState("William Hartnell");
 
@@ -38,4 +38,4 @@ const DoctorForm = () => {
     )
 }
 
-export default DoctorForm;
+export default EditForm;

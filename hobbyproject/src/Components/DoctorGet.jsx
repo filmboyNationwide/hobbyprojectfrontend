@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import DoctorDisplay from './DoctorDisplay';
 
-function DoctorGet() {
+function DoctorGet({name}) {
   const params = useParams();
   console.log(params.name);
   const [doctor, setDoctor] = useState([]);
@@ -12,7 +12,7 @@ function DoctorGet() {
   useEffect(()=>{
     const getDoctor = async () => {
       try {
-        const grab = await axios.get(`http://localhost:1688/doctors/getDoctorByName/William%20Hartnell`);
+        const grab = await axios.get(`http://localhost:1688/doctors/getDoctorByName/${params.name}`);
         console.log('RESPONSE: ', grab.data[0]);
         setDoctor(grab.data[0]);
       } catch (err) {
@@ -20,7 +20,7 @@ function DoctorGet() {
       }
     };
     getDoctor();
-  }, [])
+  }, [name])
   
   console.log(doctor)
 
