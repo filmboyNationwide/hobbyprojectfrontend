@@ -8,7 +8,7 @@ import {
 import './App.css';
 import Form from './Components/Form'
 import EditForm from './Components/EditForm'
-
+import Home from './Components/Home'
 import DoctorGet from './Components/DoctorGet'
 import TryAgain from './Components/TryAgain'
 import DoctorCreate from './Components/DoctorCreate'
@@ -18,8 +18,13 @@ import DoctorDisplay from './Components/DoctorDisplay'
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Router>
+          <header className="App-header">
+          <Router>
+          <Card>
+          <Card.Img variant="top" height="100%" src="https://static.wikia.nocookie.net/tardis/images/d/d9/Doctor_Who_logo_2023.jpg" alt="Doctor Who Logo 2023"/>
+          </Card>
+          <br/>
+          <br/>
           <Container>
             <Row>
             <Col><Link to="/">
@@ -32,19 +37,15 @@ function App() {
             <br></br>
             <br></br>
           </Container>
-          <Card>
-          <Card.Img variant="top" src="https://static.wikia.nocookie.net/tardis/images/d/d9/Doctor_Who_logo_2023.jpg"/>
-          </Card>
-          <br/>
-          <br/>
           <Routes>
+          <Route index element={<Home/>}/>
             <Route path="/search" element={<Form/>}/>
               <Route path="/details/:name" element={<DoctorGet name="name"/>} />
               <Route path="/details/none" element={<TryAgain/>}/>
               <Route path="/edit/:name" element={<EditForm current="name"/>}/>
           </Routes>
         </Router>
-      </header>
+        </header>
     </div >
   );
 }

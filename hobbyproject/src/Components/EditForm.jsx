@@ -24,7 +24,7 @@ const EditForm = ({current}) => {
                     <Form.Text className="text-muted">
                         This will let you see a Doctor
                     </Form.Text>
-                    <Button type="submit" >Submit</Button>
+                    <Button type="button" >Submit</Button>
                 </InputGroup>
                 <InputGroup className="mb-3" controlId="name">
                     <Form.Label>Actor</Form.Label>
