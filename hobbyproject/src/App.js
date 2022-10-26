@@ -41,7 +41,7 @@ function App() {
             <Route path="/search" element={<Form/>}/>
               <Route path="/details/:name" element={<DoctorGet name="name"/>} />
               <Route path="/details/none" element={<TryAgain/>}/>
-              <Route path="/edit" element={<EditForm/>}/>
+              <Route path="/edit/:name" element={<EditForm current="name"/>}/>
           </Routes>
         </Router>
       </header>

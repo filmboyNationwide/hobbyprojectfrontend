@@ -1,10 +1,14 @@
 import { useState } from 'react';
 import {
-    Form, Button
+    Form, Button, InputGroup
 } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+import DoctorGet from './DoctorGet'
 
-const EditForm = () => {
+const EditForm = ({current}) => {
+    const params = useParams();
+    console.log(params);
     const [number, setNumber] = useState("1st");
     const [name, setName] = useState("William Hartnell");
 
@@ -12,15 +16,17 @@ const EditForm = () => {
 
     return (
         <>
+            <DoctorGet name={params.current}/>
             <Form onSubmit={()=>navigate(`/details/${name}`)}>
-                <Form.Group className="mb-3" controlId="number" value={number} onChange={e=> {setNumber(e.target.value)}}>
+                <InputGroup className="mb-3" controlId="number" value={number} onChange={e=> {setNumber(e.target.value)}}>
                     <Form.Label>Doctor Number</Form.Label>
                     <Form.Control placeholder="Enter Doctor Number e.g. 1st" value={number} />
                     <Form.Text className="text-muted">
                         This will let you see a Doctor
                     </Form.Text>
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="name">
+                    <Button type="submit" >Submit</Button>
+                </InputGroup>
+                <InputGroup className="mb-3" controlId="name">
                     <Form.Label>Actor</Form.Label>
                     <Form.Select value={name} onChange={e=> {setName(e.target.value)}}>
                         <option value="none"></option>
@@ -31,8 +37,8 @@ const EditForm = () => {
                     <Form.Text className="text-muted">
                         Select Actor
                     </Form.Text>
-                </Form.Group>
-                <Button type="submit" >Submit</Button>
+                    <Button type="submit" >Submit</Button>
+                    </InputGroup>
             </Form>
         </>
     )
