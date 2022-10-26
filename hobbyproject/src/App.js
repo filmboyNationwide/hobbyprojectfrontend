@@ -11,9 +11,9 @@ import EditForm from './Components/EditForm'
 import Home from './Components/Home'
 import DoctorGet from './Components/DoctorGet'
 import TryAgain from './Components/TryAgain'
-import DoctorCreate from './Components/DoctorCreate'
-import DoctorUpdate from './Components/DoctorUpdate'
-import DoctorDisplay from './Components/DoctorDisplay'
+// import DoctorCreate from './Components/DoctorCreate'
+// import DoctorUpdate from './Components/DoctorUpdate'
+// import DoctorDisplay from './Components/DoctorDisplay'
 
 function App() {
   return (
@@ -42,7 +42,7 @@ function App() {
             <Route path="/search" element={<Form/>}/>
               <Route path="/details/:name" element={<DoctorGet name="name"/>} />
               <Route path="/details/none" element={<TryAgain/>}/>
-              <Route path="/edit/:name" element={<EditForm current="name"/>}/>
+              <Route path="/edit/:current" element={<EditForm current="current" />}/>
           </Routes>
         </Router>
         </header>

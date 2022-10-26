@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import DoctorDisplay from './DoctorDisplay';
 
-function DoctorGet({name}) {
+function DoctorGet() {
   const params = useParams();
   console.log(params.name);
   const [doctor, setDoctor] = useState([]);
@@ -20,7 +20,7 @@ function DoctorGet({name}) {
       }
     };
     getDoctor();
-  }, [name])
+  }, [params.name])
   
   console.log(doctor)
 

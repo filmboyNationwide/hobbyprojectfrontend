@@ -24,7 +24,7 @@ function Doctor({
           {`From ${startYear} to ${endYear}`}
         </Card.Text>
       </Card.Body>
-      <Button variant="info" type="button" onClick={() => navigate(`/edit/:${name}`)}>Edit</Button>
+      <Button variant="info" type="button" onClick={() => navigate(`/edit/${name}`)}>Edit</Button>
     </Card>
   );
 }

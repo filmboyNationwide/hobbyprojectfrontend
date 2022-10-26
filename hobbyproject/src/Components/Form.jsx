@@ -3,10 +3,8 @@ import {
     Form, Button
 } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
-import { useParams } from 'react-router-dom';
 
 const DoctorForm = () => {
-    const params = useParams();
     const [number, setNumber] = useState("1st");
     const [name, setName] = useState("William Hartnell");
 
@@ -15,14 +13,14 @@ const DoctorForm = () => {
     return (
         <>
             <Form onSubmit={()=>navigate(`/details/${name}`)}>
-                <Form.Group className="mb-3" controlId="number" >
+                <Form.Group className="mb-3"  >
                     <Form.Label>Doctor Number</Form.Label>
                     <Form.Control placeholder="Enter Doctor Number e.g. 1st" value={number} onChange={e=> {setNumber(e.target.value)}}/>
                     <Form.Text className="text-muted">
                         This will let you see a Doctor
                     </Form.Text>
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="name">
+                <Form.Group className="mb-3" >
                     <Form.Label>Actor</Form.Label>
                     <Form.Select value={name} onChange={e=> {setName(e.target.value)}}>
                         <option value="none"></option>
