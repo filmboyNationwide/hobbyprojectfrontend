@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import {
-    Button, Row, Col, Container,
+    Form, Button, Row, Col, Container,
   } from 'react-bootstrap';
 
-const Form = () => {
+const DoctorForm = () => {
     const [number, setNumber] = useState("1st");
     const [name, setName] = useState("William Hartnell");
     const [startYear, setstartYear] = useState(1963);
@@ -23,29 +23,29 @@ const Form = () => {
 
     return (
         <>
-            <form>
-                <label htmlFor="number">Doctor Number:</label>
-                <input type="text" id="number" onChange={handleChangeU} ></input>
-                <Button onClick={setNumber}>Search</Button>
-                <br></br>
-                <label htmlFor="name">Actor:</label>
-                <input type="text" id="name" onChange={handleChangeP}></input>
-                <Button onClick={setName}>Search</Button>
-                <br></br>
-                <label htmlFor="startYear">Start Year:</label>
-                <input type="text" id="startYear" onChange={handleChangeP}></input>
-                <Button onClick={setName}>Search</Button>
-                <br></br>
-                <label htmlFor="endYear">End Year:</label>
-                <input type="text" id="endYear" onChange={handleChangeP}></input>
-                <Button onClick={setName}>Search</Button>
-                <br></br>
-                <label htmlFor="companions">Companions:</label>
-                <input type="text" id="companions" onChange={handleChangeP}></input>
-                <Button onClick={setName}>Search</Button>
-            </form>
+            <Form>
+                <Form.Group className="mb-3" controlId="number">
+                <Form.Label>Doctor Number</Form.Label>
+                <Form.Control placeholder="Enter Doctor Number e.g. 1st" />
+                <Form.Text className="text-muted">
+                     This will let you see a Doctor
+                </Form.Text>
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="name">
+                <Form.Label>Actor</Form.Label>
+                <Form.Select aria-label="Default select example">
+                    <option value="1">William Hartnell</option>
+                     <option value="2">Patrick Troughton</option>
+                    <option value="3">Jon Pertwee</option>
+                </Form.Select>
+                 <Form.Text className="text-muted">
+                     Select Actor
+                </Form.Text>
+                </Form.Group>
+                <Button type="submit">Search</Button>
+             </Form>
         </>
     )
 }
 
-export default Form;
+export default DoctorForm;

@@ -1,9 +1,14 @@
 import PropTypes from 'prop-types';
-import { Card } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+import { Button, Card } from 'react-bootstrap';
+import { useParams } from 'react-router-dom';
 
 function Doctor({
   number,name,companions,startYear,endYear
 }) {
+  const navigate = useNavigate();
+  const params = useParams();
+  console.log(params);
   return (
     <Card bg="dark">
       {/* <Card.Img variant="top" src={image} alt={`${number} Doctor`}/> */}
@@ -19,6 +24,7 @@ function Doctor({
           {`From ${startYear} to ${endYear}`}
         </Card.Text>
       </Card.Body>
+      <Button variant="info" type="button" onClick={() => navigate(`/details/${number}`)}>Edit</Button>
     </Card>
   );
 }
