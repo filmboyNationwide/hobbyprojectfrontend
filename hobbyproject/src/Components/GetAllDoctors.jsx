@@ -25,6 +25,10 @@ function GetAllDoctors() {
   
   console.log(doctor)
 
+  if(doctor.length===0){
+    return <p>No Doctors to see!</p>
+  } else
+
   return (
     <Container>
         <div className="row row-cols-3 g-4">
