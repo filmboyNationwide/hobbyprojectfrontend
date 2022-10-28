@@ -6,7 +6,7 @@ import {
   BrowserRouter as Router, Link, Routes, Route,
 } from 'react-router-dom';
 import './App.css';
-import Form from './Components/Form'
+import SearchForm from './Components/SearchForm'
 import EditForm from './Components/EditForm'
 import Home from './Components/Home'
 import DoctorGet from './Components/DoctorGet'
@@ -49,7 +49,7 @@ function App() {
           </Container>
           <Routes>
             <Route index element={<Home />} />
-            <Route path="/search" element={<Form />} />
+            <Route path="/search" element={<SearchForm />} />
             <Route path="/getall" element={<GetAllDoctors />} />
             <Route path="/details/:name" element={<DoctorGet name="name" />} />
             <Route path="/details/none" element={<TryAgain />} />
