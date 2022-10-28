@@ -25,6 +25,7 @@ function Doctor({
         </Card.Text>
       </Card.Body>
       <Button variant="info" type="button" onClick={() => navigate(`/edit/${name}`)}>Edit</Button>
+      <Button variant="danger" type="button" onClick={() => navigate(`/delete/${name}`)}>Delete</Button>
     </Card>
   );
 }
