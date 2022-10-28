@@ -51,7 +51,7 @@ return (
 
             <InputGroup className="mb-3" >
                 <Form.Label>Companions</Form.Label>
-                <Form.Control placeholder="Enter companions separated by commas" value={companions} onChange={e => { setCompanions(e.target.value) }} />
+                <Form.Control placeholder="Enter companions" value={companions} onChange={e => { setCompanions(e.target.value) }} />
                 <Form.Text className="text-muted">
                 </Form.Text>
                 <Button type="submit" >Submit</Button>
