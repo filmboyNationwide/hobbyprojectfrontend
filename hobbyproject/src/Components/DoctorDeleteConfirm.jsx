@@ -32,7 +32,7 @@ function DoctorDeleteConfirm() {
   <>
       <h1>Are you sure you want to delete this Doctor?</h1>
       <br></br>
-      <Button variant="danger" type="button" onClick={()=> navigate(`/deleted/:${params.name}`)}>CONFIRM</Button>
+      <Button variant="danger" type="button" onClick={()=> navigate(`/deleted/${params.name}`)}>CONFIRM</Button>
       <br></br>
       <DoctorDisplay number={doctor.number} name={doctor.name} startYear={doctor.startYear} endYear={doctor.endYear} companions={doctor.companions} />
       </>
