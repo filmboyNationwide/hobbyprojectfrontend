@@ -4,22 +4,20 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import DoctorDisplay from './DoctorDisplay';
 
-function DoctorCreate() {
+function DoctorCreate({number, name, companions, startYear, endYear}) {
   const params = useParams();
-  console.log(params.name);
+  console.log(params);
   const [newDoctor, setNewDoctor] = useState([]);
   
-  
-
   useEffect(()=>{
     const createDoctor = async () => {
       try {
         const trial = {
-          "number": "3rd",
-          "companions": "Jo",
-          "name": "Jon Pertwee",
-          "startYear": 1970,
-          "endYear": 1974
+          "number": number,
+          "companions": companions,
+          "name": name,
+          "startYear": startYear,
+          "endYear": endYear
       }
         const grab = await axios.post(`http://localhost:1688/doctors/createDoctor`,trial);
         console.log('RESPONSE: ', grab.data);
@@ -29,7 +27,7 @@ function DoctorCreate() {
       }
     };
     createDoctor();
-  }, [])
+  },[number,name,companions,startYear,endYear])
   
   console.log(newDoctor)
 

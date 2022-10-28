@@ -11,6 +11,7 @@ import EditForm from './Components/EditForm'
 import Home from './Components/Home'
 import DoctorGet from './Components/DoctorGet'
 import TryAgain from './Components/TryAgain'
+import CreateForm from './Components/CreateForm'
 // import DoctorCreate from './Components/DoctorCreate'
 // import DoctorUpdate from './Components/DoctorUpdate'
 // import DoctorDisplay from './Components/DoctorDisplay'
@@ -33,6 +34,9 @@ function App() {
           <Col><Link to="/search">
               <Button>Search</Button>
             </Link></Col>
+            <Col><Link to="/create">
+              <Button>Create</Button>
+            </Link></Col>
             </Row>
             <br></br>
             <br></br>
@@ -43,6 +47,8 @@ function App() {
               <Route path="/details/:name" element={<DoctorGet name="name"/>} />
               <Route path="/details/none" element={<TryAgain/>}/>
               <Route path="/edit/:current" element={<EditForm current="current" />}/>
+              <Route path="/create" element={<CreateForm/>}/>
+              <Route path="/created/:name" element={<DoctorGet/>}/>
           </Routes>
         </Router>
         </header>
