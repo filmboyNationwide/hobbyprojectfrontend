@@ -24,7 +24,7 @@ function DoctorGet() {
   
   console.log(doctor)
 
-  return <DoctorDisplay number={doctor.number} name={doctor.name} startYear={doctor.startYear} endYear={doctor.endYear} companions={doctor.companions}/>;
+  return <DoctorDisplay number={doctor.number} name={doctor.name} startYear={doctor.startYear} endYear={doctor.endYear} companions={doctor.companions} _id={doctor._id}/>;
 }
 
 export default DoctorGet;

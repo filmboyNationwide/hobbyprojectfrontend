@@ -4,7 +4,7 @@ import { Button, Card } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
 
 function Doctor({
-  number,name,companions,startYear,endYear
+  number,name,companions,startYear,endYear,_id
 }) {
   const navigate = useNavigate();
   const params = useParams();
@@ -24,7 +24,7 @@ function Doctor({
           {`From ${startYear} to ${endYear}`}
         </Card.Text>
       </Card.Body>
-      <Button variant="info" type="button" onClick={() => navigate(`/edit/${name}`)}>Edit</Button>
+      <Button variant="info" type="button" onClick={() => navigate(`/edit/${_id}`)}>Edit</Button>
       <Button variant="danger" type="button" onClick={() => navigate(`/delete/${name}`)}>Delete</Button>
     </Card>
   );
