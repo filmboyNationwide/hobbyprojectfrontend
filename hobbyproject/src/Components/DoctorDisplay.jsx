@@ -14,20 +14,20 @@ function Doctor({
 
   const links = [
     {
-      "number":"0th",
-      "link":"No image found"
+      number:"0th",
+      link:"No image found"
     },
     {
-    "number":"1st",
-    "link":"https://upload.wikimedia.org/wikipedia/en/7/70/First_Doctor_%28Doctor_Who%29.jpg"
+    number:"1st",
+    link:"https://upload.wikimedia.org/wikipedia/en/7/70/First_Doctor_%28Doctor_Who%29.jpg"
   }
 ]
 
   function findLink(number) {
     for(let i=0; i<15; i++){
-      console.log(number)
+      console.log(number.number)
       console.log(links)
-      if(number===links[i].number){
+      if(number.number===links[i].number){
         setImage(links[i].link);
         console.log(links[i].link)
       }
@@ -40,7 +40,7 @@ function Doctor({
   console.log(params);
   return (
     <Card bg="dark">
-      <Card.Img variant="top" src={findLink(number)} alt={`${number} Doctor`}/>
+      <Card.Img variant="top" src={findLink({number})} alt={`${number} Doctor`}/>
       <Card.Body>
         <Card.Title>{number} Doctor</Card.Title>
         <Card.Text>
