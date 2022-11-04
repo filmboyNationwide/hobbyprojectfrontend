@@ -14,27 +14,26 @@ function Doctor({
 
   const links = [
     {
-      number:"0th",
+      test:"0th",
       link:"No image found"
     },
     {
-    number:"1st",
+    test:"1st",
     link:"https://upload.wikimedia.org/wikipedia/en/7/70/First_Doctor_%28Doctor_Who%29.jpg"
   }
 ]
 
   function findLink(number) {
-    for(let i=0; i<15; i++){
-      console.log(number.number)
-      console.log(links)
-      if(number.number===links[i].number){
+    for(let i=0; i<2; i++){
+      if(number.number===links[i].test){
         setImage(links[i].link);
         console.log(links[i].link)
       }
       console.log(image);
-      return image;
+      
       
     }
+    return image;
   }
 
   console.log(params);
