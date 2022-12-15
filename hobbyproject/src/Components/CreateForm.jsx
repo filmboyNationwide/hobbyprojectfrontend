@@ -10,23 +10,21 @@ const CreateForm = () => {
     const [name, setName] = useState("");
     const [startYear, setStartYear] = useState("");
     const [endYear, setEndYear] = useState("");
-    const [companions, setCompanions] = useState([]);
     const [newDoctor, setNewDoctor] = useState([]);
 
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(number,name,startYear,endYear,companions);
+        console.log(number,name,startYear,endYear);
         const trial = {
             "number": number,
-            "companions": companions,
             "name": name,
             "startYear": startYear,
             "endYear": endYear
         }
         try {
-            const grab = await axios.post(`http://localhost:2323/doctors/createDoctor`, trial);
+            const grab = await axios.post(`http://localhost:8080/doctor`, trial);
             console.log('RESPONSE: ', grab.data);
             setNewDoctor(grab.data);
             console.log('New Doctor is',newDoctor);
@@ -44,14 +42,6 @@ return (
             <InputGroup className="mb-3" >
                 <Form.Label>Doctor Number</Form.Label>
                 <Form.Control placeholder="e.g. 1st" value={number} onChange={e => { setNumber(e.target.value) }} />
-                <Form.Text className="text-muted">
-                </Form.Text>
-                <Button type="submit" >Submit</Button>
-            </InputGroup>
-
-            <InputGroup className="mb-3" >
-                <Form.Label>Companions</Form.Label>
-                <Form.Control placeholder="Enter companions" value={companions} onChange={e => { setCompanions(e.target.value) }} />
                 <Form.Text className="text-muted">
                 </Form.Text>
                 <Button type="submit" >Submit</Button>

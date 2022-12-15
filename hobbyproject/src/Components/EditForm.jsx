@@ -10,34 +10,33 @@ const EditForm = ({ current }) => {
     const params = useParams();
     console.log(params.current);
     const [number, setNumber] = useState("");
-    const [name, setName] = useState("");
+    const [actor, setActor] = useState("");
     const [startYear, setStartYear] = useState("");
     const [endYear, setEndYear] = useState("");
-    const [companions, setCompanions] = useState([]);
     const [newDoctor, setNewDoctor] = useState([]);
 
     const navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(number, name, startYear, endYear, companions);
+        console.log(number, actor, startYear, endYear);
         const trial = {
             "number": number,
-            "companions": companions,
-            "name": name,
+            "actor": actor,
             "startYear": startYear,
             "endYear": endYear
         }
+        console.log(trial);
 
         try {
-            const grab = await axios.patch(`http://localhost:2323/doctors/updateDoctorById/${params.current}`, trial);
+            const grab = await axios.patch(`http://localhost:8080/doctor/actor/${params.current}`, trial);
             console.log('RESPONSE: ', grab.data);
             setNewDoctor(grab.data);
             console.log('New Doctor is', newDoctor);
         } catch (err) {
             console.log(err)
         }
-        navigate(`/created/${name}`);
+        navigate(`/created/${actor}`);
     };
 
 
@@ -54,16 +53,8 @@ const EditForm = ({ current }) => {
                 </InputGroup>
 
                 <InputGroup className="mb-3" >
-                    <Form.Label>Companions</Form.Label>
-                    <Form.Control placeholder="Enter companions separated by commas" value={companions} onChange={e => { setCompanions(e.target.value) }} />
-                    <Form.Text className="text-muted">
-                    </Form.Text>
-                    <Button type="submit" >Submit</Button>
-                </InputGroup>
-
-                <InputGroup className="mb-3" >
                     <Form.Label>Actor</Form.Label>
-                    <Form.Control placeholder="Enter actor's name" value={name} onChange={e => { setName(e.target.value) }} />
+                    <Form.Control placeholder="Enter actor's name" value={actor} onChange={e => { setActor(e.target.value) }} />
                     <Form.Text className="text-muted">
                     </Form.Text>
                     <Button type="submit" >Submit</Button>

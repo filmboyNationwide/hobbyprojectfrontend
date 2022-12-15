@@ -17,7 +17,7 @@ function DoctorUpdate() {
         const trial = {
             "startYear": 1971
         }
-        const grab = await axios.patch(`http://localhost:2323/doctors/updateDoctorById/6358ec842ddeeef6086cb722`,trial);
+        const grab = await axios.put(`http://localhost:8080/doctor/`,trial);
         console.log('RESPONSE: ', grab.data);
         setNewDoctor(grab.data);
       } catch (err) {

@@ -7,13 +7,13 @@ import { Col, Container } from 'react-bootstrap';
 
 function GetAllDoctors() {
   const params = useParams();
-  console.log(params.name);
+  console.log(params.actor);
   const [doctor, setDoctor] = useState([]);
   
   useEffect(()=>{
     const getDoctor = async () => {
       try {
-        const grab = await axios.get(`http://localhost:2323/doctors/getAll`);
+        const grab = await axios.get(`http://localhost:8080/doctor`);
         console.log('RESPONSE: ', grab.data);
         setDoctor(grab.data);
       } catch (err) {
@@ -21,7 +21,7 @@ function GetAllDoctors() {
       }
     };
     getDoctor();
-  }, [params.name])
+  }, [params.actor])
   
   console.log(doctor)
 
@@ -36,7 +36,7 @@ function GetAllDoctors() {
                 doctor.map((doctor) => (
                   <Col>
                     <DoctorDisplay 
-                    number={doctor.number} name={doctor.name} startYear={doctor.startYear} 
+                    number={doctor.number} actor={doctor.actor} startYear={doctor.startYear}
                     endYear={doctor.endYear} companions={doctor.companions} _id={doctor._id}/>
                   </Col>
 
