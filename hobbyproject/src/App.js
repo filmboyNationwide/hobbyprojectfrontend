@@ -25,7 +25,7 @@ function App() {
       <header className="App-header">
         <Router>
           <Card>
-            <Card.Img variant="top" height="100%" src="https://static.wikia.nocookie.net/tardis/images/d/d9/Doctor_Who_logo_2023.jpg" alt="Doctor Who Logo 2023" />
+            <Card.Img variant="top" height="100%" src="https://upload.wikimedia.org/wikipedia/en/0/05/Doctor_Who_-_Current_Titlecard.png" alt="Doctor Who Logo 2023" />
           </Card>
           <br />
           <br />

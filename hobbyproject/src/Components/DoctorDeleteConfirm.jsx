@@ -16,7 +16,7 @@ function DoctorDeleteConfirm() {
   useEffect(()=>{
     const getDoctor = async () => {
       try {
-        const grab = await axios.get(`http://localhost:1688/doctors/getDoctorByName/${params.name}`);
+        const grab = await axios.get(`http://localhost:2323/doctors/getDoctorByName/${params.name}`);
         console.log('RESPONSE: ', grab.data[0]);
         setDoctor(grab.data[0]);
       } catch (err) {

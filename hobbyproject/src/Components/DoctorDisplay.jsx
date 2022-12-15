@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import { Button, Card } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
-import { useState } from 'react';
+//import { useState } from 'react';
 
 function Doctor({
   number,name,companions,startYear,endYear,_id
@@ -10,36 +10,36 @@ function Doctor({
   const navigate = useNavigate();
   const params = useParams();
 
-  const [image, setImage] = useState();
+//   const [image, setImage] = useState();
+//
+//   const links = [
+//     {
+//       test:"0th",
+//       link:"No image found"
+//     },
+//     {
+//     test:"1st",
+//     link:"https://upload.wikimedia.org/wikipedia/en/7/70/First_Doctor_%28Doctor_Who%29.jpg"
+//   }
+// ]
 
-  const links = [
-    {
-      test:"0th",
-      link:"No image found"
-    },
-    {
-    test:"1st",
-    link:"https://upload.wikimedia.org/wikipedia/en/7/70/First_Doctor_%28Doctor_Who%29.jpg"
-  }
-]
-
-  function findLink(number) {
-    for(let i=0; i<2; i++){
-      if(number.number===links[i].test){
-        setImage(links[i].link);
-        console.log(links[i].link)
-      }
-      console.log(image);
-      
-      
-    }
-    return image;
-  }
+  // function findLink(number) {
+  //   for(let i=0; i<2; i++){
+  //     if(number.number===links[i].test){
+  //       setImage(links[i].link);
+  //       console.log(links[i].link)
+  //     }
+  //     console.log(image);
+  //
+  //
+  //   }
+  //   return image;
+  // }
 
   console.log(params);
   return (
     <Card bg="dark">
-      <Card.Img variant="top" src={findLink({number})} alt={`${number} Doctor`}/>
+      <Card.Img variant="top" src='https://upload.wikimedia.org/wikipedia/en/7/70/First_Doctor_%28Doctor_Who%29.jpg' alt={`${number} Doctor`}/>
       <Card.Body>
         <Card.Title>{number} Doctor</Card.Title>
         <Card.Text>

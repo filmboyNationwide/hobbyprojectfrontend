@@ -10,7 +10,7 @@ function DoctorDelete() {
   useEffect(()=>{
     const deleteDoctor = async () => {
       try {
-        const grab = await axios.delete(`http://localhost:1688/doctors/removeDoctorByName/${params.name}`);
+        const grab = await axios.delete(`http://localhost:2323/doctors/removeDoctorByName/${params.name}`);
         console.log('RESPONSE: ', grab);
       } catch (err) {
         console.log(err)
