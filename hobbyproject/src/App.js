@@ -53,9 +53,9 @@ function App() {
             <Route path="/getall" element={<GetAllDoctors />} />
             <Route path="/details/:actor" element={<DoctorGet actor="actor" />} />
             <Route path="/details/none" element={<TryAgain />} />
-            <Route path="/edit/:current" element={<EditForm current="current" />} />
+            <Route path="/edit/:actor" element={<EditForm actor="actor" />} />
             <Route path="/create" element={<CreateForm />} />
-            <Route path="/created/:actor" element={<DoctorGet />} />
+            <Route path="/created/:actor" element={<DoctorGet actor="actor"/>} />
             <Route path="/delete/:actor" element={<DoctorDeleteConfirm />} />
             <Route path="/deleted/:actor" element={<DoctorDelete actor="actor"/>} />
           </Routes>

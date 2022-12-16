@@ -8,7 +8,7 @@ import { useParams } from 'react-router-dom';
 
 const EditForm = ({ current }) => {
     const params = useParams();
-    console.log(params.current);
+    console.log(params);
     const [number, setNumber] = useState("");
     const [actor, setActor] = useState("");
     const [startYear, setStartYear] = useState("");

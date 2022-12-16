@@ -41,8 +41,8 @@ const DoctorForm = () => {
         navigate(`/details/${doctorName}`)
     }
 
-    const sortedDoctorsYear = doctors.sort((a,b) => a.startYear - b.startYear);
     const sortedDoctorsName = doctors.sort((a,b) => a.actor.localeCompare(b.actor));
+    const sortedDoctorsYear = doctors.sort((a,b) => a.startYear - b.startYear);
 
     return (
         <>
