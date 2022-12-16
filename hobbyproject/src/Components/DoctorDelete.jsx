@@ -17,7 +17,7 @@ function DoctorDelete() {
       }
     };
     deleteDoctor();
-  }, [params.name])
+  }, [params.actor])
 
   return <p>Doctor Deleted</p>
 }

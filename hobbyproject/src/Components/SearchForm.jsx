@@ -41,13 +41,17 @@ const DoctorForm = () => {
         navigate(`/details/${doctorName}`)
     }
 
+    const sortedDoctorsYear = doctors.sort((a,b) => a.startYear - b.startYear);
+    const sortedDoctorsName = doctors.sort((a,b) => a.actor.localeCompare(b.actor));
+
     return (
         <>
             <Form onSubmit={() => navigate(`/details/${actor}`)}>
                 <Form.Group className="mb-3"  >
                     <Form.Label>Doctor Number</Form.Label>
                     <Form.Select value={number} onChange={e => { setNumber(e.target.value) }}>
-                        {doctors.map((doctor) => {
+                        {sortedDoctorsYear
+                            .map((doctor) => {
                             return <option value={doctor.number}>{doctor.number}</option>
                         })}
                     </Form.Select>
@@ -59,7 +63,8 @@ const DoctorForm = () => {
                 <Form.Group className="mb-3" >
                     <Form.Label>Actor</Form.Label>
                     <Form.Select value={actor} onChange={e => { setActor(e.target.value) }}>
-                        {doctors.map((doctor) => {
+                        {sortedDoctorsName
+                            .map((doctor) => {
                             return <option value={doctor.actor}>{doctor.actor}</option>
                         })}
                     </Form.Select>

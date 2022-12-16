@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import DoctorDisplay from './DoctorDisplay';
 
-function DoctorCreate({number, name, companions, startYear, endYear}) {
+function DoctorCreate({number, actor, companions, startYear, endYear}) {
   const params = useParams();
   console.log(params);
   const [newDoctor, setNewDoctor] = useState([]);
@@ -15,7 +15,7 @@ function DoctorCreate({number, name, companions, startYear, endYear}) {
         const trial = {
           "number": number,
           "companions": companions,
-          "name": name,
+          "actor": actor,
           "startYear": startYear,
           "endYear": endYear
       }
@@ -27,11 +27,11 @@ function DoctorCreate({number, name, companions, startYear, endYear}) {
       }
     };
     createDoctor();
-  },[number,name,companions,startYear,endYear])
+  },[number,actor,companions,startYear,endYear])
   
   console.log(newDoctor)
 
-  return <DoctorDisplay number={newDoctor.number} name={newDoctor.name} startYear={newDoctor.startYear} endYear={newDoctor.endYear} companions={newDoctor.companions}/>;
+  return <DoctorDisplay number={newDoctor.number} actor ={newDoctor.actor} startYear={newDoctor.startYear} endYear={newDoctor.endYear} companions={newDoctor.companions}/>;
 }
 
 export default DoctorCreate;

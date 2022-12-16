@@ -25,6 +25,8 @@ function GetAllDoctors() {
   
   console.log(doctor)
 
+  const sortedDoctor = doctor.sort((a,b) => a.startYear - b.startYear);
+
   if(doctor.length===0){
     return <p>No Doctors to see!</p>
   } else
@@ -33,7 +35,8 @@ function GetAllDoctors() {
     <Container>
         <div className="row row-cols-3 g-4">
           {
-                doctor.map((doctor) => (
+                sortedDoctor
+                    .map((doctor) => (
                   <Col>
                     <DoctorDisplay 
                     number={doctor.number} actor={doctor.actor} startYear={doctor.startYear}

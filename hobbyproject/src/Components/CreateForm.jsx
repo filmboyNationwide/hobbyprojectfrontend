@@ -7,7 +7,7 @@ import { useState } from 'react';
 
 const CreateForm = () => {
     const [number, setNumber] = useState("");
-    const [name, setName] = useState("");
+    const [actor, setActor] = useState("");
     const [startYear, setStartYear] = useState("");
     const [endYear, setEndYear] = useState("");
     const [newDoctor, setNewDoctor] = useState([]);
@@ -16,10 +16,10 @@ const CreateForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(number,name,startYear,endYear);
+        console.log(number,actor,startYear,endYear);
         const trial = {
             "number": number,
-            "name": name,
+            "actor": actor,
             "startYear": startYear,
             "endYear": endYear
         }
@@ -31,7 +31,7 @@ const CreateForm = () => {
         } catch (err) {
             console.log(err)
         }
-            navigate(`/created/${name}`);
+            navigate(`/created/${actor}`);
     };
 
 
@@ -49,7 +49,7 @@ return (
 
             <InputGroup className="mb-3" >
                 <Form.Label>Actor</Form.Label>
-                <Form.Control placeholder="Enter actor's name" value={name} onChange={e => { setName(e.target.value) }} />
+                <Form.Control placeholder="Enter actor's name" value={actor} onChange={e => { setActor(e.target.value) }} />
                 <Form.Text className="text-muted">
                 </Form.Text>
                 <Button type="submit" >Submit</Button>

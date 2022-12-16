@@ -6,7 +6,7 @@ import DoctorDisplay from './DoctorDisplay';
 
 function DoctorUpdate() {
   const params = useParams();
-  console.log(params.name);
+  console.log(params.actor);
   const [newDoctor, setNewDoctor] = useState([]);
   
   
@@ -17,7 +17,7 @@ function DoctorUpdate() {
         const trial = {
             "startYear": 1971
         }
-        const grab = await axios.put(`http://localhost:8080/doctor/`,trial);
+        const grab = await axios.patch(`http://localhost:8080/doctor/`,trial);
         console.log('RESPONSE: ', grab.data);
         setNewDoctor(grab.data);
       } catch (err) {
@@ -29,7 +29,7 @@ function DoctorUpdate() {
   
   console.log(newDoctor)
 
-  return <DoctorDisplay number={newDoctor.number} name={newDoctor.name} startYear={newDoctor.startYear} endYear={newDoctor.endYear} companions={newDoctor.companions}/>;
+  return <DoctorDisplay number={newDoctor.number} actor={newDoctor.actor} startYear={newDoctor.startYear} endYear={newDoctor.endYear} companions={newDoctor.companions}/>;
 }
 
 export default DoctorUpdate;
