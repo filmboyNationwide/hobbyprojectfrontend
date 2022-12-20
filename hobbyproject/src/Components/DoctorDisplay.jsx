@@ -1,13 +1,11 @@
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import { Button, Card } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
 
 function Doctor({
-  number, actor ,startYear,endYear
+  number, actor ,startYear,endYear, id
 }) {
   const navigate = useNavigate();
-  const params = useParams();
 
 //   const links = [
 //       "No image found",
@@ -35,9 +33,9 @@ function Doctor({
 //     return image;
 //   }
 
-  console.log(params);
+  // console.log(params);
   return (
-    <Card bg="dark" className="h-100">
+    <Card bg="dark" className="h-100" key={id}>
       {/*<Card.Img variant="top" src= {`${findLink({number})}`} alt={`${number} Doctor`}/>*/}
       <Card.Img variant="top" src= "https://upload.wikimedia.org/wikipedia/en/b/b1/Fifteenth_Doctor_%28Doctor_Who%29.jpg" alt={`${number} Doctor`}/>
       <Card.Body>

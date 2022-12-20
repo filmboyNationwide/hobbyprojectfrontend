@@ -7,7 +7,7 @@ import { Col, Container } from 'react-bootstrap';
 
 function GetAllDoctors() {
   const params = useParams();
-  console.log(params.actor);
+  // console.log(params.actor);
   const [doctor, setDoctor] = useState([]);
   
   useEffect(()=>{
@@ -23,7 +23,7 @@ function GetAllDoctors() {
     getDoctor();
   }, [params.actor])
   
-  console.log(doctor)
+  // console.log(doctor)
 
   const sortedDoctor = doctor.sort((a,b) => a.startYear - b.startYear);
 
@@ -37,9 +37,8 @@ function GetAllDoctors() {
           {
                 sortedDoctor
                     .map((doctor) => (
-                  <Col>
-                    <DoctorDisplay 
-                    number={doctor.number} actor={doctor.actor} startYear={doctor.startYear}
+                  <Col key={doctor.id}>
+                    <DoctorDisplay number={doctor.number} actor={doctor.actor} startYear={doctor.startYear}
                     endYear={doctor.endYear} companions={doctor.companions} _id={doctor._id}/>
                   </Col>
 
