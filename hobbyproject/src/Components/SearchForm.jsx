@@ -52,7 +52,7 @@ const DoctorForm = () => {
                     <Form.Select value={number} onChange={e => { setNumber(e.target.value) }}>
                         {sortedDoctorsYear
                             .map((doctor) => {
-                            return <option value={doctor.number}>{doctor.number}</option>
+                            return <option key= {doctor.id} value={doctor.number}>{doctor.number}</option>
                         })}
                     </Form.Select>
                     <Form.Text className="text-muted">
@@ -65,7 +65,7 @@ const DoctorForm = () => {
                     <Form.Select value={actor} onChange={e => { setActor(e.target.value) }}>
                         {sortedDoctorsName
                             .map((doctor) => {
-                            return <option value={doctor.actor}>{doctor.actor}</option>
+                            return <option key= {doctor.id} value={doctor.actor}>{doctor.actor}</option>
                         })}
                     </Form.Select>
                     <Form.Text className="text-muted">

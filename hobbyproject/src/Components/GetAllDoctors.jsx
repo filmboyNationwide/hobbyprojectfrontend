@@ -2,20 +2,20 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import DoctorDisplay from './DoctorDisplay';
+import DoctorDisplayGetAll from './DoctorDisplayGetAll';
 import { Col, Container } from 'react-bootstrap';
 
 function GetAllDoctors() {
   const params = useParams();
   // console.log(params.actor);
-  const [doctor, setDoctor] = useState([]);
+  const [doctors, setDoctors] = useState([]);
   
   useEffect(()=>{
     const getDoctor = async () => {
       try {
         const grab = await axios.get(`http://localhost:8080/doctor`);
         console.log('RESPONSE: ', grab.data);
-        setDoctor(grab.data);
+        setDoctors(grab.data);
       } catch (err) {
         console.log(err)
       }
@@ -23,11 +23,11 @@ function GetAllDoctors() {
     getDoctor();
   }, [params.actor])
   
-  // console.log(doctor)
+  console.log(doctors)
 
-  const sortedDoctor = doctor.sort((a,b) => a.startYear - b.startYear);
+  const sortedDoctors = doctors.sort((a,b) => a.startYear - b.startYear);
 
-  if(doctor.length===0){
+  if(doctors.length===0){
     return <p>No Doctors to see!</p>
   } else
 
@@ -35,10 +35,10 @@ function GetAllDoctors() {
     <Container>
         <div className="row row-cols-3 g-4">
           {
-                sortedDoctor
+                sortedDoctors
                     .map((doctor) => (
                   <Col key={doctor.id}>
-                    <DoctorDisplay number={doctor.number} actor={doctor.actor} startYear={doctor.startYear}
+                    <DoctorDisplayGetAll number={doctor.number} actor={doctor.actor} startYear={doctor.startYear}
                     endYear={doctor.endYear} companions={doctor.companions} _id={doctor._id}/>
                   </Col>
 

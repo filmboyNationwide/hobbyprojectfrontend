@@ -24,7 +24,7 @@ function DoctorGet() {
   
   console.log(doctor)
 
-  return <DoctorDisplay number={doctor.number} actor={doctor.actor} startYear={doctor.startYear} endYear={doctor.endYear}/>;
+  return <DoctorDisplay wait={1000} number={doctor.number} actor={doctor.actor} startYear={doctor.startYear} endYear={doctor.endYear}/>;
 }
 
 export default DoctorGet;

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import { Button, Card } from 'react-bootstrap';
-function DoctorDisplay({
+function DoctorDisplayGetAll({
   number, actor ,startYear,endYear, id
 }) {
   const navigate = useNavigate();
@@ -26,12 +26,10 @@ function DoctorDisplay({
 ]
 
   function findLink(number) {
-      // console.log(number);
-      // console.log(actor);
-      // console.log(number.number.slice(0,-2));
-      // const index = parseInt(number.number.slice(0,-2));
-      // const image = links[index];
-      let image = "";
+      console.log(number);
+      console.log(number.number.slice(0,-2));
+      const index = parseInt(number.number.slice(0,-2));
+      const image = links[index];
       return image;
   }
 
@@ -54,9 +52,9 @@ function DoctorDisplay({
   );
 }
 
-export default DoctorDisplay;
+export default DoctorDisplayGetAll;
 
-DoctorDisplay.propTypes = {
+DoctorDisplayGetAll.propTypes = {
   number: PropTypes.string,
   actor: PropTypes.string,
   companions: PropTypes.array,
